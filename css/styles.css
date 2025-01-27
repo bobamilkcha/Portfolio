@@ -1,0 +1,437 @@
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    text-decoration: none;
+    border : none;
+    outline : none;
+    scroll-behavior: smooth;
+
+}
+
+:root {
+    --text-color: #333;
+    --shadow-color: rgba(0,0,0,.2);
+    --main-color: #3d462d;
+    --white-color: #fdfdfd;
+    --bg-color: #fdfdfd;
+
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background : var(--bg-color);
+    color : var(--main-color);
+}
+
+header {
+    background: rgb(252, 166, 180);
+    color: var(--main-color);
+    padding: 2rem 7%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: default;
+    margin-right: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+.subheading{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    font-weight: 300;
+}
+
+.navbar{
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-right: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+.navbar a:hover{
+    color: rgb(243, 238, 223); 
+}
+
+
+/*.navbar a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: .2rem;
+    background: var(--text-color);
+}*/
+
+
+
+section {
+    min-height: 100vh;
+    padding: 10rem 7% 2rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+}
+
+.home .home-content {
+    max-width: 60rem;
+    background: #f5f5f5a0;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: .3;
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    margin-bottom: .3rem;
+}
+.home-content p {
+    font-size: 1.6rem;
+    font-weight: 100;
+}
+
+.home-content .social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin-right: .5rem;
+    color: var(--main-color);
+    transition: .5s ease;
+    margin-top: .3rem;
+}
+
+.home-content .social-media a:hover {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: var(--main-color);
+    border-radius: .6rem;
+    box-shadow: 0.2rem 0.5rem var(--shadow-color);
+    font-size: 1.6rem;
+    color: var(--white-color);
+    letter-spacing: .1rem;
+    font-weight: 400;
+    transition: .5s ease;
+    border: .2rem solid transparent;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.home .profession-container{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 768px;
+    height: 768px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+
+.home .profession-container .profession-box {
+    position: absolute;
+    top: 6.3rem;
+    right: 4.2rem;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    display: flex;
+    /*border: 10px solid #3d462d;*/
+    border-width: 4rem;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.banner-img img {
+    position: absolute;
+    bottom: 0;
+    right: 9rem;
+    width: 26%;
+    pointer-events: none;
+}
+
+
+.home-img img {
+    position: absolute;
+    bottom: 0;
+    left: 15rem;
+    width: 28%;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.animate__slideInUp {
+    --animate-duration: 2s;
+  }
+
+.about {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center both About Me and the card horizontally */
+    justify-content: center; /* Ensure items stack towards the top */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    padding-top: 4rem;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+
+.about-container {
+    text-align: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem; /* Space below About Me for the card */
+}
+
+.about h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.about h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.about p{
+    font-size: 1.6rem; /* Font size for the paragraph */
+    line-height: 1.5; /* Better line spacing */
+    font-weight: 100;
+}
+
+.card-container {
+    display: flex;           /* Arrange cards in a row */
+    gap: 4rem;               /* Space between cards */
+    justify-content: center; /* Center cards horizontally */
+    flex-wrap: wrap;         /* Enable wrapping for smaller screens */
+    max-width: 100%;         /* Allow container to take full width */
+}
+
+
+.card-inner {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 420px;
+    background-color: var(--white-color);
+    border: 0.3rem solid gray;
+    border-radius: 10%;
+    font-size: 2rem;
+    font-weight: 100;
+    color: var(--text-color);
+    font-family: monospace;
+    box-shadow: 0.2rem 0.5rem var(--shadow-color);
+  }
+  
+  .cardtitle {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 3rem; /* Adds space between the title and the list */
+  }
+  
+  .card-inner p {
+    list-style-type: none;
+    padding: .3rem;
+    margin: 0; /* Ensure there is no extra margin */
+  }
+
+  .project-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+  
+  .project {
+    background-color: #fff; /* White card */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: scale(1.02); /* Slight hover effect */
+  }
+  
+  .project h3 {
+    font-size: 1.8em;
+    color: var(--text-color); /* Matching title color */
+    margin-bottom : 10px;
+  }
+  
+  .project p {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .image-container img {
+    width: 48%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container img:hover {
+    transform: scale(1.05);
+  }
+
+  .media-carousel {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .media-container img {
+    width: 50%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .buttons {
+    margin-top: 10px;
+  }
+  
+  button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border: .2rem solid transparent;
+    border-radius: 15%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--white-color);
+    color: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: 15%;
+  }
+  
+
+.space-between {
+    margin-left: 5rem;
+}
+
+label {
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .container {
+    padding: 0; /* Remove any padding */
+    width: fit-content; /* Make the container width just fit the content */
+    margin: auto;
+  }
+  
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .contact p {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
+  }
+
+  .contact {
+    padding: 2rem;
+    max-width: 70rem;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+
+    

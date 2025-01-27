@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="/css/styles.css">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a href="#" class=logo>Portfolio.</a>
+        <nav class="navbar">
+            <ul> 
+               <a href="#home" class=active>Home</a>
+               <a href="#about">About</a>
+               <a href="#react-projects">Projects</a>
+               <a href="#contact">Contact</a>
+           </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+     <section id= "home" class="home">
+        <div class="home-content">
+
+            <h3 class= "animate__slideInUp">Hello, I am</h3>
+            <h1>Syasya Zulkiflee</h1>
+            <p>Motivated Computer Science student with a passion in Software Development looking for internship opportunities from 12/5/2025 to 12/12/2025. 
+                Eager to contribute skills in Software Development with multiple miscellaneous soft skills. Willing to learn new skills and gain hands-on experience.
+                When I'm not coding or designing, I enjoy multiple forms of art including drawing, piano and many more.
+            </p>
+
+            <div class="social-media">
+                <a href="#https://www.instagram.com/syasyaxzul/"><i class='bx bxl-instagram' ></i></a>
+                <a href="#mailto:syasyazulkiflee22@gmail.com"><i class='bx bx-envelope' ></i></a>
+                <a href="#https://www.linkedin.com/in/syasya-zulkiflee-1794b928b/"><i class='bx bxl-linkedin' ></i></a>
+            </div>
+
+            <a href="pdf/resume.pdf" class="btn">Download Resume</a>
+
+        </div>
+        <div class="profession-container">
+            <div class="profession-box">
+            </div>
+        </div>
+        <div class="banner-img">
+            <img src="images/syasya.jpg" alt="">
+        </div>
+        <div class="home-img">
+            <img src="images/home.png" alt="">
+        </div>
+        
+        
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2>About Me</h2>
+            <h3>Education</h3>
+            <div class="edu-container"></div>
+            <p>Foundation in Computer Science at Universiti Teknologi PETRONAS<span class="space-between"> - Sept 2022 - August 2023  </span> </p> 
+            <p>Bachelor in Computer Science (Hons) at Universiti Teknologi PETRONAS <span class="space-between">- Sept 2023 - Dec 2026</span></p>
+            
+            
+            <h3>Skills</h3>
+            <div class="card-container">
+                <div class="card-inner">
+                    <div class="cardtitle">Front-End Development</div>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+                <div class="card-inner">
+                    <div class="cardtitle">Back-End Development</div>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>Oracle SQL</li>
+                        <li>C++</li>
+                        <li>C#</li>
+                    </ul>
+                </div>
+                <div class="card-inner">
+                    <div class="cardtitle">Miscellaneous</div>
+                    <ul class="cardlist">
+                        <li>R language</li>
+                        <li>Visual Basic</li>
+                        <li>Arduino</li>
+                        <li>Unity2D</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+
+    <section id="react-projects"></section>
+    <script type="text/javascript">
+        const MediaCarousel = ({ media }) => {
+        const [currentIndex, setCurrentIndex] = React.useState(0);
+
+        const handleNext = () => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % media.length);
+        };
+
+        const handlePrevious = () => {
+            setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? media.length - 1 : prevIndex - 1
+            );
+        };
+
+        return React.createElement(
+            "div",
+            { className: "media-carousel" },
+            React.createElement(
+            "div",
+            { className: "media-container" },
+            React.createElement("img", {
+                src: media[currentIndex],
+                alt: `Media ${currentIndex + 1}`,
+                className: "media",
+            })
+            ),
+            React.createElement(
+            "div",
+            { className: "buttons" },
+            React.createElement(
+                "button",
+                { onClick: handlePrevious },
+                "Previous"
+            ),
+            React.createElement(
+                "button",
+                { onClick: handleNext },
+                "Next"
+            )
+            )
+        );
+        };
+
+        const ProjectCard = ({ title, description, images }) =>
+        React.createElement(
+            "div",
+            { className: "project" },
+            React.createElement("h3", null, title),
+            React.createElement("p", null, description),
+            React.createElement(MediaCarousel, { media: images })
+        );
+
+
+        const Projects = () =>
+        React.createElement(
+            "div",
+            { className: "project-container" },
+            React.createElement("h2", null, "My Projects"),
+            React.createElement(
+            "div",
+            { className: "project-list" },
+            React.createElement(ProjectCard, {
+                title: "Whispering Woods - Unity2D (C#)",
+                description:
+                "Solo development on an unpublished 2D platform game in Unity using multiple free resources. Implemented simple enemy AI, simple inventory, unlock chest with key mechanism, functioning main menu, game over, pause and restart feature within 3 weeks.",
+                images: ["images/image8.jpg","images/image1.jpg", "images/image5.jpg"],
+            }),
+            React.createElement(ProjectCard, {
+                title: "Public Transport Network Database - Oracle (SQL)",
+                description:
+                "Worked with a team of 5, developed and monitored a database capable of capturing inputs of various public transport, route taken, updates on maintenance, schedule alongside the amenities provided for each one.",
+                images: ["images/image2.jpg", "images/image3.jpg", "images/image4.jpg"],
+            }),
+            React.createElement(ProjectCard, {
+                title: "Parking Management System - Dev-C++ (C++)",
+                description:
+                "Co-developed parking management system secured with access control system for safety of vehicles and drivers, optimizing space utilization while also minimizing congestion centered on Structured Programming.",
+                images: ["images/image6.jpg", "images/image7.jpg"],
+            })
+            )
+        );
+        ReactDOM.createRoot(document.getElementById("react-projects")).render(
+        React.createElement(Projects)
+    );
+
+    </script>
+
+    <!-- Contact Section -->
+    <div id="react-contact"></div>
+    <script>
+      const { createElement } = React;
+      const { createRoot } = ReactDOM;
+
+      const ContactSection = () => {
+        return createElement(
+          "section",
+          { id: "contact", className: "contact" },
+          createElement(
+            "div",
+            { className: "container" },
+            createElement("h2", null, "Contact Me"),
+            createElement(
+              "p",
+              null,
+              "If you'd like to get in touch, please feel free to email me at ",
+              createElement(
+                "a",
+                { href: "mailto:syasyazulkiflee22@gmail.com" },
+                "syasyazulkiflee@gmail.com"
+              ),
+              "."
+            ),
+            createElement(
+              "form",
+              { action: "/send-message", method: "POST" },
+              createElement("div",{ className: "form-group" },
+                createElement("label", { htmlFor: "name" }, "Name"),
+                createElement("input", {
+                  type: "text",
+                  id: "name",
+                  name: "name",
+                  required: true,
+                })
+              ),
+              createElement(
+                "div",
+                { className: "form-group" },
+                createElement("label", { htmlFor: "email" }, "Email"),
+                createElement("input", {
+                  type: "email",
+                  id: "email",
+                  name: "email",
+                  required: true,
+                })
+              ),
+              createElement(
+                "div",
+                { className: "form-group" },
+                createElement("label", { htmlFor: "message" }, "Message"),
+                createElement("textarea", {
+                  id: "message",
+                  name: "message",
+                  required: true,
+                })
+              ),
+              createElement(
+                "button",
+                { type: "submit" },
+                "Send Message"
+              )
+            )
+          )
+        );
+      };
+
+      createRoot(document.getElementById("react-contact")).render(
+        createElement(ContactSection)
+      );
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Syasya Zulkiflee. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
